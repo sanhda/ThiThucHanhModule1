@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thi thực hành Module 1 Câu 4</title>
+</head>
+<body>
+
+<canvas id="myCanvas"></canvas>
+
+<script>
+
+    // circle class
+    class Circle {
+        constructor(x, y, radius, color) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.color = color;
+        }
+    }
+
+    // render a circle to canvas
+    function renderCircle(circle) {
+
+        // get canvas by id
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // change color
+        ctx.fillStyle = circle.color;
+
+        // draw circle
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, 2*Math.PI);
+        ctx.fill();
+    }
+
+    // create and render a circle
+    let circle = new Circle(50, 50, 80, '#000000')
+    renderCircle(circle);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thi thực hành Module 1 Câu 3</title>
+</head>
+<body>
+
+<script>
+
+    // function check if given number is prime
+    // a prime is a number that cannot divisible for any number from 2 to number-1
+    function isPrime(value) {
+        // 0 and 1 is special case and not a prime
+        if (value<2) {return false}
+
+        for (let i = 2; i < value; i++) {
+            if (value%i===0) {return false}
+        }
+
+        return true;
+    }
+
+
+    // function calculate sum of prime
+    function sumOfListPrime(x) {
+        let sum = 0;
+
+        // loop from 0 to x and increase sum if it's prime
+        for (let i = 0; i <= x; i++) {
+            if (isPrime(i)) {
+                sum += i;
+            }
+        }
+
+        return sum;
+    }
+
+    console.log(sumOfListPrime(1));
+    console.log(sumOfListPrime(10));
+    console.log(sumOfListPrime(5));
+
+
+</script>
+</body>
+</html>

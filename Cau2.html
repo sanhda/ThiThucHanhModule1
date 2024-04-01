@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thi thực hành Module 1 Câu 2</title>
+</head>
+<body>
+
+<script>
+    let array = [8, 9, 7, 2, 0];
+
+    // function insert number to an array
+    function insertNumberToArray(array, x, index) {
+
+        // check if index is valid
+        if (index<0 || index>array.length) {
+            return array;
+        }
+
+        // new array from begin to index
+        let newArray = [];
+        for (let i = 0; i < index; i++) {
+            newArray.push(array[i]);
+        }
+
+        // insert x
+        newArray.push(x);
+
+        // insert from index to end
+        for (let i = index; i < array.length; i++) {
+            newArray.push(array[i])
+        }
+
+        return newArray;
+
+    }
+
+    console.log(insertNumberToArray(array, 5, -1));
+    console.log(insertNumberToArray(array, 5, 6));
+    console.log(insertNumberToArray(array, 5, 3));
+
+
+</script>
+</body>
+</html>
